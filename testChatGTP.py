@@ -7,6 +7,7 @@ import requests
 import io
 import numpy as np
 import cv2
+import random
 
 
 
@@ -25,7 +26,7 @@ def main():
 		counter += 1
 
 		#画像をランダムに選ぶURL
-		img_url = "https://picsum.photos/300/300?random={}" 
+		img_url = "https://picsum.photos/300/300?random={}.format(random.randomint(0, 10000))" 
 
 		#画像をダウンロード
 		img_url_response = requests.get(img_url)
